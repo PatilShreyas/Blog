@@ -25,6 +25,7 @@ module.exports = {
             inlineCodeMarker: null,
             aliases: {},
             showLineNumbers: true,
+			lineNumbers: true,
             noInlineHighlight: false,
           },
         },
