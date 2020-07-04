@@ -33,7 +33,7 @@ Demo of *Firebase Database Pagination*Library Implementation
 
 Let’s get start to the code!
 
-Open*Android Studio.* Create a new project OR you can simply *clone this repository:* <https://github.com/PatilShreyas/FirebaseRecyclerPagination.git>
+Open *Android Studio.* Create a new project OR you can simply *clone this repository:* <https://github.com/PatilShreyas/FirebaseRecyclerPagination.git>
 
 First of all, go to Firebase Console and create a new Android Project. Download configuration file i.e. *google-services.json* and place it in the **/app** directory.
 
@@ -273,11 +273,9 @@ At last, To begin populating data, call `startListening()` method. `stopListenin
 
 You can see the *full app demo* on below-listed resources with source code and step-by-step guide.
 
-***Thank You!*😃**
+***Thank You!* 😃**
 
 If you need any help get in touch with me on [Facebook](https://www.facebook.com/shreyaspatil99), [Twitter](https://twitter.com/imShreyasPatil),[ LinkedIn](https://www.linkedin.com/in/patil-shreyas), [GitHub](https://github.com/PatilShreyas), [Personal Site](https://patilshreyas.github.io/).
-
-
 
 ## Resources:
 
