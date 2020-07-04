@@ -3,8 +3,14 @@ template: BlogPost
 path: /firebase-database-paging-android
 date: 2020-02-20T14:59:36.571Z
 title: "Firebase Database Pagination — Android \U0001F525"
-thumbnail: /assets/FirestorePagination.png
+metaDescription: >-
+  Android Library to implement Paging support for Realtime Database in
+  RecyclerView. This library is developed by me. It will help you to implement a
+  database in pages.
+thumbnail: /assets/FirebasePagination.png
 ---
+# Firebase Database Pagination — Android 🔥
+
 Hi everyone, In this article, we will learn to implement *Paging support* for *Firebase Database* in Android. Before starting to the topic, Let’s first take a look at the available components within the Firebase.
 
 **FirebaseUI-Android** library has **FirebaseRecyclerAdapter** for easy implementation of the population of **Firebase Realtime Database**. But if the database is having a total number of children in thousands or around then it becomes a bad presentation of User Interface. Let’s take an example if you are implementing social media app and you are having around 100 Posts. If we load these Posts using *FirebaseRecyclerAdapter* then it will load all the Posts at the time of loading. So, this will be wastage of memory or hectic for the user to scroll down with a large list or it is not good to present in front of the application user. To overcome this, we will use pagination which will load Firebase Database items in pages.
@@ -27,9 +33,9 @@ Demo of *Firebase Database Pagination*Library Implementation
 
 Let’s get start to the code!
 
-Open*Android Studio.*Create a new project OR you can simply *clone this repository:* <https://github.com/PatilShreyas/FirebaseRecyclerPagination.git>
+Open*Android Studio.* Create a new project OR you can simply *clone this repository:* <https://github.com/PatilShreyas/FirebaseRecyclerPagination.git>
 
-First of all, go to Firebase Console and create a new Android Project. Download configuration file i.e.*google-services.json* and place it in the**/app** directory.
+First of all, go to Firebase Console and create a new Android Project. Download configuration file i.e. *google-services.json* and place it in the **/app** directory.
 
 In this app, you are showing a paginated list of Posts. Posts will load in `RecyclerView.`
 
@@ -76,8 +82,7 @@ public class Post {
 
 ## Initialize :
 
-Don’t Forget to set `LayoutManager` to the RecyclerView.
-Set it using `RecyclerView#setLayoutManager()`
+Don’t forget to set `LayoutManager` to the RecyclerView. Set it using `RecyclerView#setLayoutManager()`
 
 ```java
        @Override
@@ -101,7 +106,7 @@ Set it using `RecyclerView#setLayoutManager()`
 ## Setup Configuration for PagedList
 
 First of all configure PagedList\
-*Remember that, the size you will pass to`se`*`tPageSize()`*a method will load x3 items of that size.*(Here, in this example we passed value 10. So, it will load 10x3 i.e. 30 items)
+*Remember that, the size you will pass to* `setPageSize()` *a method will load x3 items of that size.* (Here, in this example we passed value 10. So, it will load 10x3 i.e. 30 items)
 
 ```java
 PagedList.Config config = new PagedList.Config.Builder()
@@ -112,7 +117,7 @@ PagedList.Config config = new PagedList.Config.Builder()
 ```
 
 Then Configure Adapter by building FirebasePagingOptions. It will generic.\
-*Remember one thing, don’t pass Query with*`orderByKey()`*,*`limitToFirst()`*or*`limitToLast()`*. This will cause an error.*
+*Remember one thing, don’t pass Query with* `orderByKey()`*,*`limitToFirst()`*or*`limitToLast()`*. This will cause an error.*
 
 ```java
         DatabasePagingOptions<Post> options = new DatabasePagingOptions.Builder<Post>()
@@ -123,7 +128,7 @@ Then Configure Adapter by building FirebasePagingOptions. It will generic.\
 
 ## Initialize Adapter
 
-`FirebaseRecyclerPagingAdapter`is built on the top of Android Architecture Components - Paging Support Library. To implement, you should already have`RecyclerView.ViewHolder`subclass. Here We used`PostViewHolder`class.
+`FirebaseRecyclerPagingAdapter` is built on the top of Android Architecture Components - Paging Support Library. To implement, you should already have `RecyclerView.ViewHolder` subclass. Here We used `PostViewHolder` class.
 
 ```java
         mAdapter = new FirebaseRecyclerPagingAdapter<Post, PostViewHolder>(options) {
@@ -171,22 +176,23 @@ Any changes that occur in the adapter will result in the callback `onLoadingStat
 
 ## Get Child Reference
 
-To get the reference of a child from a list.`FirebaseRecyclerPagingAdapter`has a method called`getRef()`. You can obtain`DatabaseReference`of the child using it.\
-Get it using`FirebaseRecyclerPagingAdapter#getRef()`For e.g.
+To get the reference of a child from a list. `FirebaseRecyclerPagingAdapter` has a method called `getRef()`. You can obtain `DatabaseReference` of the child using it.\
+Get it using `FirebaseRecyclerPagingAdapter#getRef()` for e.g.
 
 ```java
       @Override
-      protected void onBindViewHolder(@NonNull PostViewHolder holder,
-                                   int position,
-                                   @NonNull Post model) {
-
+      protected void onBindViewHolder(
+          @NonNull PostViewHolder holder,
+          int position,
+          @NonNull Post model
+      ) {
           DatabaseReference reference = getRef(position);
       }
 ```
 
 ## Error Handling
 
-To get to know about`DatabaseError`caught during Paging, Override method`onError()`in the adapter.
+To get to know about `DatabaseError`caught during Paging, Override method `onError()` in the adapter.
 
 ```java
       @Override
@@ -200,10 +206,10 @@ To get to know about`DatabaseError`caught during Paging, Override method`onError
 
 ## Retrying List (After Error / Failure)
 
-To retry items loading in RecyclerView,`retry()`method from Adapter class is used.\
-Use it as`FirebaseRecyclerPagingAdapter#retry()`.\
-This method should be used only after caught in Error.`retry()`should not be invoked anytime other than ERROR state.\
-Whenever`LoadingState`becomes`LoadingState.ERROR`we can use`retry()`to load items in RecyclerView which were unable to load due to recent failure/error and to maintain Paging List stable.\
+To retry items loading in RecyclerView,`retry()` method from Adapter class is used.\
+Use it as `FirebaseRecyclerPagingAdapter#retry()`.\
+This method should be used only after caught in Error. `retry()`should not be invoked anytime other than ERROR state.\
+Whenever `LoadingState` becomes `LoadingState.ERROR` we can use `retry()` to load items in RecyclerView which were unable to load due to recent failure/error and to maintain Paging List stable.\
 See the demo for a method.
 
 ```java
@@ -213,7 +219,7 @@ See the demo for a method.
         }
 ```
 
-Or outside`FirebaseRecyclerPagingAdapter`
+Or outside `FirebaseRecyclerPagingAdapter`
 
 ```java
         mAdapter.retry();
@@ -221,8 +227,8 @@ Or outside`FirebaseRecyclerPagingAdapter`
 
 ## Refreshing List
 
-To refresh items in RecyclerView,`refresh()`method from Adapter class is used.\
-Use it as`FirebaseRecyclerPagingAdapter#refresh()`.\
+To refresh items in RecyclerView, `refresh()` method from Adapter class is used.\
+Use it as `FirebaseRecyclerPagingAdapter#refresh()`.\
 This method clears all the items in RecyclerView and reloads the data again from the beginning.\
 See the demo for a method.
 
@@ -245,7 +251,7 @@ Finally, Set adapter to RecyclerView.
 
 ## Lifecycle
 
-At last, To begin populating data, call`startListening()`method.`stopListening()`stops the data being loaded.
+At last, To begin populating data, call `startListening()` method. `stopListening()`stops the data being loaded.
 
 ```java
     //Start Listening Adapter
@@ -265,8 +271,15 @@ At last, To begin populating data, call`startListening()`method.`stopListening()
 
 > Thus, we have implemented the**Firebase Recycler Pagination**.*😃*
 
-You can see the*full app demo*on below-listed resources with source code and step-by-step guide.
+You can see the *full app demo* on below-listed resources with source code and step-by-step guide.
 
 ***Thank You!*😃**
 
-If you need any help get in touch with me on[Facebook](https://www.facebook.com/shreyaspatil99),[Twitter](https://twitter.com/imShreyasPatil),[LinkedIn](https://www.linkedin.com/in/patil-shreyas),[GitHub](https://github.com/PatilShreyas), [Personal Site](https://patilshreyas.github.io/).
+If you need any help get in touch with me on [Facebook](https://www.facebook.com/shreyaspatil99), [Twitter](https://twitter.com/imShreyasPatil),[ LinkedIn](https://www.linkedin.com/in/patil-shreyas), [GitHub](https://github.com/PatilShreyas), [Personal Site](https://patilshreyas.github.io/).
+
+
+
+## Resources:
+
+* [GitHub Repository](https://github.com/PatilShreyas/FirebaseRecyclerPagination)
+* [Firebase Open Source](https://firebaseopensource.com/projects/patilshreyas/firebaserecyclerpagination/)
