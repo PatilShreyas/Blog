@@ -1,7 +1,7 @@
 ---
 template: BlogPost
 path: /firebase-database-paging-android
-date: 2020-02-20T14:59:36.571Z
+date: 2019-04-08T14:59:36.571Z
 title: "Firebase Database Pagination — Android \U0001F525"
 metaDescription: >-
   Android Library to implement Paging support for Realtime Database in
