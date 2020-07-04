@@ -1,50 +1,272 @@
 ---
 template: BlogPost
-path: /fillerama
+path: /firebase-database-paging-android
 date: 2020-02-20T14:59:36.571Z
-title: Dummy Content from Fillerama
-thumbnail: /assets/image-5.jpg
+title: "Firebase Database Pagination — Android \U0001F525"
+thumbnail: /assets/FirestorePagination.png
 ---
-# No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister.
+Hi everyone, In this article, we will learn to implement *Paging support* for *Firebase Database* in Android. Before starting to the topic, Let’s first take a look at the available components within the Firebase.
 
-I am the Doctor, and you are the Daleks! You hit me with a cricket bat. You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better? You hit me with a cricket bat.
+**FirebaseUI-Android** library has **FirebaseRecyclerAdapter** for easy implementation of the population of **Firebase Realtime Database**. But if the database is having a total number of children in thousands or around then it becomes a bad presentation of User Interface. Let’s take an example if you are implementing social media app and you are having around 100 Posts. If we load these Posts using *FirebaseRecyclerAdapter* then it will load all the Posts at the time of loading. So, this will be wastage of memory or hectic for the user to scroll down with a large list or it is not good to present in front of the application user. To overcome this, we will use pagination which will load Firebase Database items in pages.
 
-You've swallowed a planet! No… It's a thing; it's like a plan, but with more greatness. You hate me; you want to kill me! Well, go on! **Kill me!** *KILL ME!* Sorry, checking all the water in this area; there's an escaped fish.
+Recently, Firebase has released the **Firestore Database.** To support pagination with Firestore database **FirebaseUI-Android** library has provided the **API** for that purpose as **FirestorePagingAdapter** but still, it’s not available for **Realtime Database.** Firebase Realtime Database is also important in some type of applications such as chatting apps. Because its speed is faster than Firestore. So, there is a need for pagination in Firebase Database too.
 
-## Did I mention we have comfy chairs?
+For this purpose, I have developed **AP I**to implement Firebase Realtime Database Pagination in *RecyclerView*. This will help you to populate your Firebase Database items in *RecyclerView* with paging support. FirebaseUI-Android will soon publish this API officially. It's expected to be released in ***version-4.4.0*** officially. Till it will happen, let’s have a look…
 
-No… It's a thing; it's like a plan, but with more greatness. Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in a football match, didn't you?
+This API is available on [this](https://github.com/PatilShreyas/FirebaseRecyclerPagination) GitHub repository.
 
-1. \*Insistently\* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do!
-2. Sorry, checking all the water in this area; there's an escaped fish.
-3. Father Christmas. Santa Claus. Or as I've always known him: Jeff.
+*FirebaseRecyclerPagingation*Library binds Firebase Realtime Database Query to a `RecyclerView` by loading Data in pages. `FirebaseRecyclerPagingAdapter` is built on top of Android Paging Support Library.
 
-### I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
+**See Output :**
 
-It's a fez. I wear a fez now. Fezes are cool. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? Sorry, checking all the water in this area; there's an escaped fish.
+![](https://miro.medium.com/max/316/1*0B8ZLJrE7avCzNjZeC-SLg.gif)
 
-* I am the last of my species, and I know how that weighs on the heart so don't lie to me!
-* You hit me with a cricket bat.
-* You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better?
+Demo of *Firebase Database Pagination*Library Implementation
 
-I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
+# 💻 Getting Started :
 
-It's a fez. I wear a fez now. Fezes are cool. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
+Let’s get start to the code!
 
-You know how I sometimes have really brilliant ideas? Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in a football match, didn't you?
+Open*Android Studio.*Create a new project OR you can simply *clone this repository:* <https://github.com/PatilShreyas/FirebaseRecyclerPagination.git>
 
-You've swallowed a planet! They're not aliens, they're Earth…liens! You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better?
+First of all, go to Firebase Console and create a new Android Project. Download configuration file i.e.*google-services.json* and place it in the**/app** directory.
 
-Father Christmas. Santa Claus. Or as I've always known him: Jeff. \*Insistently\* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do! No… It's a thing; it's like a plan, but with more greatness.
+In this app, you are showing a paginated list of Posts. Posts will load in `RecyclerView.`
 
-\*Insistently\* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do! You've swallowed a planet! I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why.
+## Gradle Setup
 
-It's art! A statement on modern society, 'Oh Ain't Modern Society Awful?'! All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? Saving the world with meals on wheels.
+```gradle
+dependencies {
 
-You've swallowed a planet! Heh-haa! Super squeaky bum time! All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better?
+    //RecyclerView
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
 
-No… It's a thing; it's like a plan, but with more greatness. It's a fez. I wear a fez now. Fezes are cool. You hate me; you want to kill me! Well, go on! Kill me! KILL ME! Saving the world with meals on wheels.
+    //Firebase Database
+    implementation 'com.google.firebase:firebase-database:16.1.0'
+    implementation 'com.google.firebase:firebase-core:16.0.7'
+    
+    //Firebase-UI Library
+    implementation 'com.firebaseui:firebase-ui-database:4.3.1'
 
-You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better? Sorry, checking all the water in this area; there's an escaped fish. You hit me with a cricket bat.
+    //Android Paging Libray
+    implementation "android.arch.paging:runtime:1.0.1"
 
-Did I mention we have comfy chairs? Stop talking, brain thinking. Hush. No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister. You know how I sometimes have really brilliant ideas?
+    //Firebase Pagination Library
+    implementation 'com.shreyaspatil:FirebaseRecyclerPagination:1.0.1'
+}
+```
+
+## App Setup
+
+Make model class (Consider `Post.java`) in the app.
+
+```java
+public class Post {
+    public String title;
+    public String body;
+
+    public Post(){}
+
+    public Post(String title, String body) {
+        this.title = title;
+        this.body = body;
+    }
+}
+```
+
+## Initialize :
+
+Don’t Forget to set `LayoutManager` to the RecyclerView.
+Set it using `RecyclerView#setLayoutManager()`
+
+```java
+       @Override
+       protected void onCreate(Bundle savedInstanceState) {
+           super.onCreate(savedInstanceState);
+           setContentView(R.layout.activity_main);
+
+           mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
+ 
+           //Initialize RecyclerView
+           mRecyclerView = findViewById(R.id.recycler_view);
+           mRecyclerView.setHasFixedSize(true);
+
+           LinearLayoutManager mManager = new LinearLayoutManager(this);
+           mRecyclerView.setLayoutManager(mManager);
+
+           //Initialize Database
+           mDatabase = FirebaseDatabase.getInstance().getReference().child("posts");
+```
+
+## Setup Configuration for PagedList
+
+First of all configure PagedList\
+*Remember that, the size you will pass to`se`*`tPageSize()`*a method will load x3 items of that size.*(Here, in this example we passed value 10. So, it will load 10x3 i.e. 30 items)
+
+```java
+PagedList.Config config = new PagedList.Config.Builder()
+                .setEnablePlaceholders(false)
+                .setPrefetchDistance(5)
+                .setPageSize(10)
+                .build();
+```
+
+Then Configure Adapter by building FirebasePagingOptions. It will generic.\
+*Remember one thing, don’t pass Query with*`orderByKey()`*,*`limitToFirst()`*or*`limitToLast()`*. This will cause an error.*
+
+```java
+        DatabasePagingOptions<Post> options = new DatabasePagingOptions.Builder<Post>()
+                .setLifecycleOwner(this)
+                .setQuery(mDatabase, config, Post.class)
+                .build();
+```
+
+## Initialize Adapter
+
+`FirebaseRecyclerPagingAdapter`is built on the top of Android Architecture Components - Paging Support Library. To implement, you should already have`RecyclerView.ViewHolder`subclass. Here We used`PostViewHolder`class.
+
+```java
+        mAdapter = new FirebaseRecyclerPagingAdapter<Post, PostViewHolder>(options) {
+            @NonNull
+            @Override
+            public PostViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                return new PostViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false));
+            }
+
+            @Override
+            protected void onBindViewHolder(@NonNull PostViewHolder holder,
+                                         int position,
+                                         @NonNull Post model) {
+
+                holder.setItem(model);
+            }
+            
+            @Override
+            protected void onLoadingStateChanged(@NonNull LoadingState state) {
+                switch (state) {
+                    case LOADING_INITIAL:
+                    case LOADING_MORE:
+                        // Do your loading animation
+                        mSwipeRefreshLayout.setRefreshing(true);
+                        break;
+
+                    case LOADED:
+                        // Stop Animation
+                        mSwipeRefreshLayout.setRefreshing(false);
+                        break;
+
+                    case FINISHED:
+                        //Reached end of Data set
+                        mSwipeRefreshLayout.setRefreshing(false);
+                        break;
+
+                    case ERROR:
+                        retry();
+                        break;
+                }
+        };
+```
+
+Any changes that occur in the adapter will result in the callback `onLoadingStateChanged()`
+
+## Get Child Reference
+
+To get the reference of a child from a list.`FirebaseRecyclerPagingAdapter`has a method called`getRef()`. You can obtain`DatabaseReference`of the child using it.\
+Get it using`FirebaseRecyclerPagingAdapter#getRef()`For e.g.
+
+```java
+      @Override
+      protected void onBindViewHolder(@NonNull PostViewHolder holder,
+                                   int position,
+                                   @NonNull Post model) {
+
+          DatabaseReference reference = getRef(position);
+      }
+```
+
+## Error Handling
+
+To get to know about`DatabaseError`caught during Paging, Override method`onError()`in the adapter.
+
+```java
+      @Override
+      protected void onError(@NonNull DatabaseError databaseError) {
+          mSwipeRefreshLayout.setRefreshing(false);
+          databaseError.toException().printStackTrace();
+          // Handle Error
+
+      }
+```
+
+## Retrying List (After Error / Failure)
+
+To retry items loading in RecyclerView,`retry()`method from Adapter class is used.\
+Use it as`FirebaseRecyclerPagingAdapter#retry()`.\
+This method should be used only after caught in Error.`retry()`should not be invoked anytime other than ERROR state.\
+Whenever`LoadingState`becomes`LoadingState.ERROR`we can use`retry()`to load items in RecyclerView which were unable to load due to recent failure/error and to maintain Paging List stable.\
+See the demo for a method.
+
+```java
+        @Override
+        protected void onError(@NonNull DatabaseError databaseError) {
+            retry();          
+        }
+```
+
+Or outside`FirebaseRecyclerPagingAdapter`
+
+```java
+        mAdapter.retry();
+```
+
+## Refreshing List
+
+To refresh items in RecyclerView,`refresh()`method from Adapter class is used.\
+Use it as`FirebaseRecyclerPagingAdapter#refresh()`.\
+This method clears all the items in RecyclerView and reloads the data again from the beginning.\
+See the demo for a method.
+
+```java
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mAdapter.refresh();
+            }
+        });
+```
+
+## Set Adapter
+
+Finally, Set adapter to RecyclerView.
+
+```java
+        mRecyclerView.setAdapter(mAdapter);
+```
+
+## Lifecycle
+
+At last, To begin populating data, call`startListening()`method.`stopListening()`stops the data being loaded.
+
+```java
+    //Start Listening Adapter
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAdapter.startListening();
+    }
+
+    //Stop Listening Adapter
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mAdapter.stopListening();
+    }
+```
+
+> Thus, we have implemented the**Firebase Recycler Pagination**.*😃*
+
+You can see the*full app demo*on below-listed resources with source code and step-by-step guide.
+
+***Thank You!*😃**
+
+If you need any help get in touch with me on[Facebook](https://www.facebook.com/shreyaspatil99),[Twitter](https://twitter.com/imShreyasPatil),[LinkedIn](https://www.linkedin.com/in/patil-shreyas),[GitHub](https://github.com/PatilShreyas), [Personal Site](https://patilshreyas.github.io/).
