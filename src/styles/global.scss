@@ -27,6 +27,9 @@ body.light {
   --contact-bg: #f7f8fe;
   --contact-bdr: #d3d6e7;
   --input-bg: var(--background);
+  --inline-bg: #b6b6b6;
+  --inline-color: rgb(0, 0, 0);
+  --code-background: #051324;
 }
 body.dark {
   --primary-color: #9984d5;
@@ -49,6 +52,9 @@ body.dark {
   --contact-bg: var(--card-shadow);
   --contact-bdr: var(--card-bg);
   --input-bg: var(--card-bg);
+  --inline-bg: #a3a3a32a;
+  --inline-color: white;
+  --code-background: #ffffff15;
 }
 /* System Fonts as used by Medium and WordPress */
 body {
@@ -408,7 +414,7 @@ body.light {
 
 // Changes starts from here
 .gatsby-highlight {
-  background-color: #161414;
+  background-color: var(--code-background);
   border-radius: 0.3em;
   margin: 0.5em 0;
   padding: 1em;
@@ -432,11 +438,17 @@ body.light {
 }
 
 .gatsby-highlight-code-line {
-  background-color: #feb;
+  background-color: rgb(0, 120, 141);
   display: block;
   margin-right: -1em;
   margin-left: -1em;
   padding-right: 1em;
   padding-left: 0.75em;
   border-left: 0.25em solid #f99;
+}
+
+ /* Inline code */
+ :not(pre) > code[class*="language-"] {
+  background-color: var(--inline-bg);
+  color: var(--inline-color);
 }
