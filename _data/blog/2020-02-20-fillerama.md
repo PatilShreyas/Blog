@@ -269,7 +269,7 @@ At last, To begin populating data, call `startListening()` method. `stopListenin
     }
 ```
 
-> Thus, we have implemented the**Firebase Recycler Pagination**.*😃*
+> Thus, we have implemented the **Firebase Recycler Pagination**.😃
 
 You can see the *full app demo* on below-listed resources with source code and step-by-step guide.
 
