@@ -27,7 +27,7 @@ body.light {
   --contact-bg: #f7f8fe;
   --contact-bdr: #d3d6e7;
   --input-bg: var(--background);
-  --inline-bg: #b6b6b6;
+  --inline-bg: #dfdede;
   --inline-color: rgb(0, 0, 0);
   --code-background: #051324;
 }
@@ -197,7 +197,7 @@ a {
   overflow: hidden;
   &:before {
     content: "";
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.0);
     position: absolute;
     top: 0;
     left: 0;
