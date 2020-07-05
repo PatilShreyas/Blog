@@ -10,9 +10,9 @@ body {
   margin-top: 0
 }
 body.light {
-  --primary-color: #381696;
+  --primary-color: #000000;
   --primary-text-color: #fff;
-  --featured-bg: #493b8a;
+  --featured-bg: #000000;
   --featured-text: #fff;
   --secondary-color: #10072b;
   --background: #fff;
@@ -33,23 +33,23 @@ body.light {
   --code-background: #051324;
 }
 body.dark {
-  --primary-color: #9984d5;
+  --primary-color: #408ebb;
   --primary-text-color: #fff;
-  --featured-bg: #66578d;
+  --featured-bg: #408ebb;
   --featured-text: #fff;
-  --secondary-color: #66578d;
-  --background: #0A041A;
+  --secondary-color: #408ebb;
+  --background: #09171f;
   --text-color: rgba(255,255,255,0.88);
   --text-secondary-color: rgba(255,255,255,0.66);
   --site-header: var(--background);
-  --card-bg: #181326;
-  --card-bdr: #181326;
-  --card-shadow: #020204;
+  --card-bg: #233946;
+  --card-bdr: #233946;
+  --card-shadow: #081e2b;
   --btn-bg: var(--background);
   --btn-bdr: #d3d6e7;
   --btn-text-color: #868892;
   --btn-hover-bg: var(--btn-bdr);
-  --btn-hover-text-color: #00062b;
+  --btn-hover-text-color: #233946;
   --contact-bg: var(--card-shadow);
   --contact-bdr: var(--card-bg);
   --input-bg: var(--card-bg);
