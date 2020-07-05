@@ -1,4 +1,5 @@
 $font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
 
 html,
 body {
@@ -155,10 +156,12 @@ a {
   font-weight: 300;
 }
 .post {
+  font-size: 24px;
+  font-family: 'Tinos', serif;
   padding: 0;
   background:var(--background);
   color: var(--text-color);
-  line-height: 1.5;
+  line-height: 1.8;
   > .blog-post-content {
     max-width: 768px;
     margin: 0 auto;
@@ -430,6 +433,7 @@ body.light {
  */
 .gatsby-highlight pre[class*="language-"] {
   background-color: transparent;
+  font-size: 14px;
   margin: 0;
   padding: 0;
   overflow: initial;
@@ -449,6 +453,7 @@ body.light {
 
  /* Inline code */
  :not(pre) > code[class*="language-"] {
+  font-size: 18px;
   background-color: var(--inline-bg);
   color: var(--inline-color);
 }
