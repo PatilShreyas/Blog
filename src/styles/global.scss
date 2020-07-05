@@ -158,10 +158,11 @@ a {
 .post {
   font-size: 1.2rem;
   font-family: 'Tinos', serif;
+  word-wrap: break-word;
   padding: 0;
   background:var(--background);
   color: var(--text-color);
-  line-height: 1.8;
+  line-height: 28px;
   > .blog-post-content {
     max-width: 768px;
     margin: 0 auto;
@@ -173,7 +174,7 @@ a {
   .post-title {
     text-align: center;
     margin: 0 0 0.5rem;
-    line-height: 1.3;
+    line-height: 1.4;
     font-size: 2rem;
   }
   .post-meta {
