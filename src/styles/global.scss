@@ -31,6 +31,7 @@ body.light {
   --inline-bg: #dfdede;
   --inline-color: rgb(0, 0, 0);
   --code-background: #051324;
+  --link-color: #004799;
 }
 body.dark {
   --primary-color: #408ebb;
@@ -56,6 +57,7 @@ body.dark {
   --inline-bg: #a3a3a32a;
   --inline-color: white;
   --code-background: #ffffff15;
+  --link-color: #a6c5e9;
 }
 /* System Fonts as used by Medium and WordPress */
 body {
@@ -180,6 +182,11 @@ a {
   .post-meta {
     margin-bottom: 32px;
     text-align: center;
+  }
+  a {
+    text-decoration-color: var(--link-color);
+    text-decoration-line: underline;
+    color: var(--link-color);
   }
   
 }
