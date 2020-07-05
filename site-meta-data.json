@@ -1,9 +1,9 @@
 {
-  "title": "Shreyas Patil",
-  "siteUrl": "https://shreyaspatil.dev",
-  "description": "Android Dev",
+  "title": "Blog - Shreyas Patil - #AndroidDev #Kotlin #Firebase #Flutter",
+  "siteUrl": "https://blog.shreyaspatil.dev",
+  "description": "Welcome to my blog. Here you'll mostly find #AndroidDev📱, #Kotlin❤️, #Firebase🔥 and some #Flutter💙 related stuff. I believe in \"Sharing is Caring!\"",
   "home": {
     "title": "Hi! I'm Shreyas",
-    "description": "Welcome to my blog. Here you'll mostly find #AndroidDev📱, #Kotlin❤️ and #Firebase🔥 related stuff. I believe in \"Sharing is Caring!\""
+    "description": "Welcome to my blog. Here you'll mostly find #AndroidDev📱, #Kotlin❤️, #Firebase🔥 and some #Flutter💙 related stuff. I believe in \"Sharing is Caring!\""
   }
 }
