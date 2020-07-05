@@ -156,7 +156,7 @@ a {
   font-weight: 300;
 }
 .post {
-  font-size: 24px;
+  font-size: 1.2rem;
   font-family: 'Tinos', serif;
   padding: 0;
   background:var(--background);
@@ -183,25 +183,22 @@ a {
   
 }
 .post-thumbnail {
-  text-align: center;
-  min-height: 440px;
+  height: 380px;
   //background-image: url('/assets/circles-light.png');
-  background-color: var(--featured-bg);
+  background-color: transparent;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   border-radius: 18px;
   margin-bottom: 36px;
   color: var(--featured-text);
-  display: grid;
   align-content: center;
   position: relative;
-  padding: 18px;
-  overflow: hidden;
+  overflow: auto;
   &:before {
     content: "";
-    background: rgba(0,0,0,0.0);
-    position: absolute;
+    background: transparent;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -453,7 +450,7 @@ body.light {
 
  /* Inline code */
  :not(pre) > code[class*="language-"] {
-  font-size: 18px;
+  font-size: 16px;
   background-color: var(--inline-bg);
   color: var(--inline-color);
 }

@@ -33,7 +33,7 @@ Demo of *Firebase Database Pagination*Library Implementation
 
 Let’s get start to the code!
 
-Open *Android Studio.* Create a new project OR you can simply *clone this repository:* <https://github.com/PatilShreyas/FirebaseRecyclerPagination.git>
+Open *Android Studio.* Create a new project OR you can simply [*clone this repository:*](https://github.com/PatilShreyas/FirebaseRecyclerPagination.git)
 
 First of all, go to Firebase Console and create a new Android Project. Download configuration file i.e. *google-services.json* and place it in the **/app** directory.
 
@@ -117,7 +117,7 @@ PagedList.Config config = new PagedList.Config.Builder()
 ```
 
 Then Configure Adapter by building FirebasePagingOptions. It will generic.\
-*Remember one thing, don’t pass Query with* `orderByKey()`*,*`limitToFirst()`*or*`limitToLast()`*. This will cause an error.*
+*Remember one thing, don’t pass Query with *`orderByKey()`*, *`limitToFirst()`* or *`limitToLast()`*. This will cause an error.*
 
 ```java
         DatabasePagingOptions<Post> options = new DatabasePagingOptions.Builder<Post>()
