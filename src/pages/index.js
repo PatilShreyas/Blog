@@ -21,6 +21,8 @@ const IndexPage = ({
       <Helmet>
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
+        <meta property="og:title" content={site.siteMetadata.title}/>
+        <meta property="og:image" content="https://github.com/PatilShreyas/PatilShreyas.github.io/raw/master/Images/profile.jpg"/>
       </Helmet>
       <HeroHeader/>
       <h2>Blog Posts &darr;</h2>
