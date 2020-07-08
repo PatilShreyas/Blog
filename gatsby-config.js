@@ -44,11 +44,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Delog GatbsyJS Starter`,
-        short_name: `Delog`,
+        name: `Blog - Shreyas Patil`,
+        short_name: `Shreyas Patil`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#381696`,
+        theme_color: `#003f5c`,
         display: `standalone`,
         icon: "src/images/icon.png",
       },
