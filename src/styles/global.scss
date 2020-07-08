@@ -28,7 +28,7 @@ body.light {
   --contact-bg: #f7f8fe;
   --contact-bdr: #d3d6e7;
   --input-bg: var(--background);
-  --inline-bg: #dfdede;
+  --inline-bg: #f1f1f1;
   --inline-color: rgb(0, 0, 0);
   --code-background: #051324;
   --link-color: #004799;
@@ -164,7 +164,7 @@ a {
   padding: 0;
   background:var(--background);
   color: var(--text-color);
-  line-height: 28px;
+  line-height: 32px;
   > .blog-post-content {
     max-width: 768px;
     margin: 0 auto;
