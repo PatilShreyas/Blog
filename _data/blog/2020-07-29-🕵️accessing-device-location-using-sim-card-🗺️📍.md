@@ -8,7 +8,7 @@ metaDescription: >-
   Android
 thumbnail: /assets/0_pFV2551jGtqv1Hgh.png
 ---
-These days, almost many apps use the device location📍. There might be some use case in your app which is strongly dependent on the user’s location. *For example*, if you have developed a *social* app 💬 which shows posts of users and imagine you’ve feature which shows trending posts in *user’s **nearby area***. For such use case, you’ll get a user’s device location and after some *processing*, you’ll be able to manage this feature for your *cool* app.
+These days, almost many apps use the device location📍. There might be some use case in your app which is strongly dependent on the user’s location. *For example*, if you have developed a *social* app 💬 which shows posts of users and imagine you’ve feature which shows trending posts in user’s **nearby area**. For such use case, you’ll get a user’s device location and after some *processing*, you’ll be able to manage this feature for your *cool* app.
 
 But wait… 🤔
 
@@ -191,9 +191,10 @@ Thank you! 😃
 
 Sharing is caring!
 
----
+- - -
 
 # Resources
-- [GitHub Repository](https://github.com/PatilShreyas/CellLocationFind-Android)
-- [Unwiredlabs OpenCellID](https://opencellid.org/)
-- [Unwiredlabs API Documentation](https://unwiredlabs.com/api#documentation)
+
+* [GitHub Repository](https://github.com/PatilShreyas/CellLocationFind-Android)
+* [Unwiredlabs OpenCellID](https://opencellid.org/)
+* [Unwiredlabs API Documentation](https://unwiredlabs.com/api#documentation)
