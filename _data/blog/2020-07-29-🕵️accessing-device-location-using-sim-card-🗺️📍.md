@@ -26,6 +26,12 @@ Yes😃, for such use case you won’t need user’s perfect location. Just area
 
 The famous app *TikTok app* extracts SIM Card📶 details and fetches the user’s location for the perfect updates and avoiding spoofing of location.
 
+
+
+## How did we come up with this Idea? 💡
+
+We at [ScaleReal](http://scalereal.com/) were developing a product which was heavily dependent on the user’s location and we thought *“What if GPS location isn’t available due to conditions like device failure or bad weather or if the user provides fake location”*🤔. We thoroughly studied these scenarios with all aspects 🧐 and came with the solution of using SIM card details to extract at least the *cell tower location* of the user. This solution helped us to pinpoint the user's location using *cell tower triangulation* and the results were even better when we wrote a custom algorithm on top of these two. In turn a ***better*** product! 😄
+
 *In this article, we’ll learn to access the device’s cell tower location by extracting SIM Card details from the device. So let’s start implementation.*
 
 > **Note:** GPS is not involved in this process. So doesn’t matter if it’s enabled tr disabled!
@@ -47,7 +53,19 @@ From your app, you just have to send this data payload to API:
 
 ![](https://miro.medium.com/max/806/1*7Ba9hGALY4EXDPznFiDJ5A.png)
 
-After that, you’ll get a response from API as below👇.
+
+
+Let’s understand these parameters:
+
+* `radio`— Network type. For e.g. GSM, LTE, etc
+* `mcc`—*Mobile Country Code* used to identify the country which a mobile subscriber belongs to.
+* `mnc`— Used to uniquely identify a mobile subscribers **network** the **MCC** is combined with a Mobile **Network** Code.
+* `lac`— Location Area Code
+* `cid`— Cell ID
+
+When you request API with above details, you’ll get a response from API as below👇.
+
+
 
 ![](https://miro.medium.com/max/875/1*HYgnjLaL1ZgJCYW7jYOGxA.png)
 
