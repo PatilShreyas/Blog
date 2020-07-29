@@ -1,7 +1,7 @@
 ---
 template: BlogPost
 path: /accessing-device-location-using-sim-card-without-gps
-date: 2020-07-29T04:00:04.581Z
+date: 2020-07-28T04:00:04.581Z
 title: "\U0001F575️Accessing device location using SIM Card \U0001F5FA️\U0001F4CD"
 metaDescription: >-
   In this article, we’ll see how to access device location using the SIM card in
