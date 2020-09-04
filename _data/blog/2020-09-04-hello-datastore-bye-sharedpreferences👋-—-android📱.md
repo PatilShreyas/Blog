@@ -30,7 +30,7 @@ These are some reasons which encourage us to use DataStore and finally say goodb
 
 - - -
 
-#### \# That’s not only the reason —
+### \# That’s not only the reason —
 
 `DataStore` provides two different types of implementations to store data.
 
@@ -39,7 +39,7 @@ These are some reasons which encourage us to use DataStore and finally say goodb
 
 I think that’s enough introduction to `DataStore`. It’s time to write some code👨‍💻😎.
 
-- - -
+---
 
 ## Let’s begin code 👨‍💻
 
