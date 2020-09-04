@@ -234,7 +234,7 @@ Thank you! 😃
 
 - - -
 
-### Resources
+# Resources
 
 * ***[PatilShreyas/DataStoreExample](https://github.com/PatilShreyas/DataStoreExample "https\://github.com/PatilShreyas/DataStoreExample")***
 * ***[DataStore | Android Developer](https://developer.android.com/topic/libraries/architecture/datastore "https\://developer.android.com/topic/libraries/architecture/datastore")***
