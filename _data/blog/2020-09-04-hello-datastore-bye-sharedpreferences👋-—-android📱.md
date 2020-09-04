@@ -4,7 +4,7 @@ path: /hello-datastore-bye-sharedpreferences-android
 date: 2020-09-03T03:50:44.332Z
 title: "Hello DataStore, Bye SharedPreferences\U0001F44B — Android\U0001F4F1"
 metaDescription: "In this article series, we’ll learn how to use the latest Android Jetpack \U0001F680 library i.e. DataStore in Android apps."
-thumbnail: /assets/Hello DataStore Bye SharedPreferences.png
+thumbnail: /assets/hello-datastore-1.png
 ---
 # Hello DataStore, Bye SharedPreferences👋 — Android📱
 
