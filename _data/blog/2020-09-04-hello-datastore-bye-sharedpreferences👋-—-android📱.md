@@ -79,13 +79,13 @@ enum class UiMode {
 
 This will initialize the instance`dataStore` field by creating `DataStore` using the file name as *“settings_pref”.*`createDataStore()`is extension function created on `Context`.
 
-*  Now we’ll be storing UI mode preference using a key (as we managed in `SharedPreference`). Key in `DataStore` is created as below 👇
+* Now we’ll be storing UI mode preference using a key (as we managed in `SharedPreference`). Key in `DataStore` is created as below 👇
 
-  ```kotlin
-  companion object {
-      val IS_DARK_MODE = preferencesKey<Boolean>("dark_mode")
-  }
-  ```
+```kotlin
+companion object {
+    val IS_DARK_MODE = preferencesKey<Boolean>("dark_mode")
+}
+```
 
 Here 👆 we’ve created a 🔑 KEY `IS_DARK_MODE` which will store a boolean value (`false`*for Light mode /*`true`*for Dark mode*). Because Preferences DataStore does not use a predefined schema, you must use `Preferences.preferencesKey()` to define a key for each value that you need to store in the `DataStore<Preferences>`.
 
@@ -206,8 +206,6 @@ Yeah! That’s it 😃. It’s time to run this app 🚀. When you run this app,
 
 ![Example app demonstrating use of Jetpack **DataStore**](https://cdn-images-1.medium.com/max/1000/1*kP3g5Z8KThYf4SMZtkMtBw.gif "Example app demonstrating use of Jetpack *DataStore")
 
-
-
 Looking Awesome! 😍, isn’t it?
 
 This is how we implemented Preferences `DataStore` instead of `SharedPreferences`.
@@ -226,8 +224,6 @@ But it’s content is not readable as you can see in below image 👇
 
 ![](https://cdn-images-1.medium.com/max/1000/1*DNZE9KyQzaYlI75UBKvi8g.png)
 
-Data Store file
-
 - - -
 
 Let me know your valuable feedback about this article. 🙏
@@ -240,6 +236,5 @@ Thank you! 😃
 
 ### Resources
 
-- ***[PatilShreyas/DataStoreExampl](https://github.com/PatilShreyas/DataStoreExample "https\://github.com/PatilShreyas/DataStoreExample")***
-
-- ***[DataStore | Android Developer](https://developer.android.com/topic/libraries/architecture/datastore "https\://developer.android.com/topic/libraries/architecture/datastore")***
+* ***[PatilShreyas/DataStoreExample](https://github.com/PatilShreyas/DataStoreExample "https\://github.com/PatilShreyas/DataStoreExample")***
+* ***[DataStore | Android Developer](https://developer.android.com/topic/libraries/architecture/datastore "https\://developer.android.com/topic/libraries/architecture/datastore")***
