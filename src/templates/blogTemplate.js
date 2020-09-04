@@ -15,7 +15,7 @@ export default function Template({
         <title>{frontmatter.title} | {siteMetadata.title}</title>
         <meta name="description" content={frontmatter.metaDescription} />
         <meta property="og:image" content={"https://blog.shreyaspatil.dev" + frontmatter.thumbnail}></meta>
-      </Helmet>$
+      </Helmet>
       <div className="blog-post-container">
         <article className="post">
           
