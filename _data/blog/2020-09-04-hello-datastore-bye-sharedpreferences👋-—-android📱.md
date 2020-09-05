@@ -14,7 +14,7 @@ Welcome Android developers 👋. This article is the first part of a series arti
 
 * Jetpack DataStore is a data storage solution.
 * It allows us to store key-value pairs (like `SharedPreferences`) or typed objects with [protocol buffers](https://developers.google.com/protocol-buffers) *(We’ll see it in next article)*.
-* DataStore uses Kotlin, Coroutines and Flow to store data synchronously with consistency and transaction support 😍.
+* DataStore uses Kotlin, Coroutines and Flow to store data asynchronously with consistency and transaction support 😍.
 * In short, it’s the new data storage solution which is the replacement of `SharedPreferences`***.***
 
 #### Why DataStore **🤷‍♂**️
@@ -39,7 +39,7 @@ These are some reasons which encourage us to use DataStore and finally say goodb
 
 I think that’s enough introduction to `DataStore`. It’s time to write some code👨‍💻😎.
 
----
+- - -
 
 ## Let’s begin code 👨‍💻
 
@@ -70,12 +70,12 @@ enum class UiMode {
 
 * We’ll create a class — `SettingsManager` where we’ll be managing setting preferences set by users in our app.
 
-  ```kotlin
+```kotlin
   class SettingsManager(context: Context) {
 
       private val dataStore = context.createDataStore(name = "settings_pref")
       ...
-  ```
+```
 
 This will initialize the instance`dataStore` field by creating `DataStore` using the file name as *“settings_pref”.*`createDataStore()`is extension function created on `Context`.
 
@@ -91,7 +91,7 @@ Here 👆 we’ve created a 🔑 KEY `IS_DARK_MODE` which will store a boolean v
 
 * Now we’ll create a method which will set UI mode from our UI/Activity i.e. `setUiMode()` 🔧
 
-> ***Note:** Preferences `DataStore` provides a method `edit()` which transactional updates value in `DataStore`.*
+> **Note:** Preferences `DataStore` provides a method `edit()` which transactional updates value in `DataStore`.
 
 ```kotlin
 suspend fun setUiMode(uiMode: UiMode) {
@@ -108,7 +108,7 @@ suspend fun setUiMode(uiMode: UiMode) {
 
 👆 You can see we’ve exposed a Flow `uiModeFlow` which will emit values whenever preferences are edited/updated. If you remember, we have been storing boolean in our `DataStore`. Using `map{}`, we’re mapping boolean values to the`UiMode` i.e `UiMode.LIGHT` or `UiMode.DARK`.
 
-> ***Note:** DataStore throws `IOException` when it failed to read a value. So we have handled it by emitting `emptyPreferences()`.*
+> **Note:** DataStore throws `IOException` when it failed to read a value. So we have handled it by emitting `emptyPreferences()`.
 
 ```kotlin
 val uiModeFlow: Flow<UiMode> = dataStore.data
@@ -157,7 +157,7 @@ class MainActivity : AppCompatActivity() {
 
 * In `initViews()` we’ll update preferences (UI Mode) on click of `ImageButton`.
 
-  ```kotlin
+```kotlin
       private fun initViews() {
           imageButton.setOnClickListener {
               lifecycleScope.launch {
@@ -168,10 +168,11 @@ class MainActivity : AppCompatActivity() {
               }
           }
       }
-  ```
+```
+
 * In `observeUiPreferences()`, we’ll observe `DataStore` UI Mode preference using a field which we exposed in `SettingsManager` which is a `Flow` 🌊 which will emit values whenever preferences are updated.
 
-  ```kotlin
+```kotlin
       private fun observeUiPreferences() {
           settingsManager.uiModeFlow.asLiveData().observe(this) { uiMode ->
               when (uiMode) {
@@ -180,13 +181,13 @@ class MainActivity : AppCompatActivity() {
               }
           }
       }
-  ```
+```
 
 👆 Here we’ve used `asLiveData()` flow extension function which gives emitted values from Flow in `LiveData`. *(Otherwise, we can also use*`lifecycleScope.launch{}`*here if you don’t like to use*`LiveData`*).*
 
 * We’re just updating *image resource* and *background color of root layout* when UI mode is changed. *(Actual mode can be changed using*`AppCompatDelegate.setDefaultNightMode()`*)*
 
-  ```kotlin
+```kotlin
       private fun onLightMode() {
           isDarkMode = false
 
@@ -200,7 +201,7 @@ class MainActivity : AppCompatActivity() {
           rootView.setBackgroundColor(ContextCompat.getColor(this, android.R.color.black))
           imageButton.setImageResource(R.drawable.ic_sun)
       }
-  ```
+```
 
 Yeah! That’s it 😃. It’s time to run this app 🚀. When you run this app, you’ll see it like 👇
 
@@ -214,11 +215,9 @@ So, `DataStore` is cool 🆒, isn’t it? Give it a try 😃. Since it’s curre
 
 - - -
 
-DataStore uses file management mechanism for storing data. But it’s different than managed in `SharedPreferences`. Now if you want to see how’s your data getting stored then using Android Studio’s *‘Device File Explorer’*you can go to `/data/app/YOUR_APP_PACKAGE_NAME/files/datastore` and you can see the file there like below 👇.
+DataStore uses file management mechanism for storing data. But it’s different than managed in `SharedPreferences`. Now if you want to see how’s your data getting stored then using Android Studio’s *‘Device File Explorer’* you can go to `/data/app/YOUR_APP_PACKAGE_NAME/files/datastore` and you can see the file there like below 👇.
 
-![](https://cdn-images-1.medium.com/max/1000/1*W8HF6TyO4cpLrz998ymsUA.png)
-
-Device File Explorer Snapshot
+![Device File Explorer Snapshot](https://cdn-images-1.medium.com/max/1000/1*W8HF6TyO4cpLrz998ymsUA.png "Device File Explorer Snapshot")
 
 But it’s content is not readable as you can see in below image 👇
 
