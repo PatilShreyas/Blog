@@ -101,6 +101,25 @@ a {
     }
   }
 }
+
+blockquote {
+  margin: 0.5rem;
+  font-style: italic;
+  line-height: 2.5rem;
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+blockquote::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--secondary-color);
+  border-radius: 2px / 4px;
+}
+
 .site-header {
   display: flex;
   justify-content: space-between;
