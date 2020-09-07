@@ -103,6 +103,8 @@ a {
 }
 
 hr {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   line-height: 1em;
   position: relative;
   outline: 0;
@@ -209,7 +211,7 @@ blockquote::before {
 }
 .post {
   font-size: 1.1rem;
-  line-height: 2.3em;
+  line-height: 2.1em;
   font-family: 'Merriweather', serif;
   word-wrap: break-word;
   padding: 0;
