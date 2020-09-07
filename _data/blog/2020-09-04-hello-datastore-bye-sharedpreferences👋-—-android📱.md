@@ -106,10 +106,6 @@ suspend fun setUiMode(uiMode: UiMode) {
 
 * Now it’s time to get preference 🔥. `DataStore` provides `data` property which exposes the preference values using `Flow`. Means it’s time to leverage Flow 🌊 😍. See the code below 👇
 
-👆 You can see we’ve exposed a Flow `uiModeFlow` which will emit values whenever preferences are edited/updated. If you remember, we have been storing boolean in our `DataStore`. Using `map{}`, we’re mapping boolean values to the`UiMode` i.e `UiMode.LIGHT` or `UiMode.DARK`.
-
-> **Note:** DataStore throws `IOException` when it failed to read a value. So we have handled it by emitting `emptyPreferences()`.
-
 ```kotlin
 val uiModeFlow: Flow<UiMode> = dataStore.data
     .catch {
@@ -130,9 +126,13 @@ val uiModeFlow: Flow<UiMode> = dataStore.data
     }
 ```
 
+👆 You can see we’ve exposed a Flow `uiModeFlow` which will emit values whenever preferences are edited/updated. If you remember, we have been storing boolean in our `DataStore`. Using `map{}`, we’re mapping boolean values to the`UiMode` i.e `UiMode.LIGHT` or `UiMode.DARK`.
+
+> **Note:** DataStore throws `IOException` when it failed to read a value. So we have handled it by emitting `emptyPreferences()`.
+
 So that’s all about setting up `DataStore` 😃. Now let’s design UI.
 
-- - -
+---
 
 ### Setup Activity
 

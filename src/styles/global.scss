@@ -1,5 +1,5 @@
 $font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 html,
 body {
@@ -74,7 +74,7 @@ a {
   }
 }
 .site-wrapper {
-  padding: 32px;
+  padding: 0.7rem;
   max-width: 1140px;
   margin: 0 auto;
   img {
@@ -158,13 +158,13 @@ a {
   font-weight: 300;
 }
 .post {
-  font-size: 1.2rem;
-  font-family: 'Tinos', serif;
+  font-size: 1.1rem;
+  line-height: 2.0em;
+  font-family: 'Merriweather', serif;
   word-wrap: break-word;
   padding: 0;
   background:var(--background);
   color: var(--text-color);
-  line-height: 32px;
   > .blog-post-content {
     max-width: 768px;
     margin: 0 auto;
@@ -424,7 +424,7 @@ body.light {
 .gatsby-highlight {
   background-color: var(--code-background);
   border-radius: 0.3em;
-  margin: 0.5em 0;
+  margin: 0.5rem 0;
   padding: 1em;
   overflow: auto;
 }
