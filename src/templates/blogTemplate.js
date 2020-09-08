@@ -14,7 +14,25 @@ export default function Template({
       <Helmet>
         <title>{frontmatter.title} | {siteMetadata.title}</title>
         <meta name="description" content={frontmatter.metaDescription} />
-        <meta property="og:image" content={"https://blog.shreyaspatil.dev" + frontmatter.thumbnail}></meta>
+
+        <meta name="keywords" content={frontmatter.metaKeywords} />
+
+        <meta itemprop="name" content={frontmatter.title} />
+        <meta itemprop="description" content={frontmatter.metaDescription} />
+        <meta itemprop="image" content={"https://blog.shreyaspatil.dev" + frontmatter.thumbnail} />
+
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:description" content={frontmatter.metaDescription} />
+        <meta property="og:image" content={"https://blog.shreyaspatil.dev" + frontmatter.thumbnail} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={frontmatter.title} />
+        <meta name="twitter:description" content={frontmatter.metaDescription} />
+        <meta name="twitter:image" content={"https://blog.shreyaspatil.dev" + frontmatter.thumbnail} />
+
+        <link rel="canonical" href={"https://blog.shreyaspatil.dev" + frontmatter.path} />
       </Helmet>
       <div className="blog-post-container">
         <article className="post">

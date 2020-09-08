@@ -64,6 +64,10 @@ collections:
         name: metaDescription
         widget: text
         required: false
+      - label: Meta Keywords
+        name: metaKeywords
+        widget: text
+        required: true
       - label: Featured Image
         name: thumbnail
         widget: image
