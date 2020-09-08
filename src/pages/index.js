@@ -20,9 +20,11 @@ const IndexPage = ({
     <Layout>
       <Helmet>
         <title>{site.siteMetadata.title}</title>
+        <meta name="keywords" content="shreyas, patil, shreyas patil, blogs, android, android developer, kotlin, firebase, mobile development" />
         <meta name="description" content={site.siteMetadata.description} />
         <meta property="og:title" content={site.siteMetadata.title}/>
         <meta property="og:image" content="https://github.com/PatilShreyas/PatilShreyas.github.io/raw/master/Images/profile.jpg"/>
+        <link rel="canonical" href="https://blog.shreyaspatil.dev" />
       </Helmet>
       <HeroHeader/>
       <h2>Blog Posts &darr;</h2>
