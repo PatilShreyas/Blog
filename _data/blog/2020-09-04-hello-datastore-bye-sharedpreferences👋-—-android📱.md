@@ -2,7 +2,7 @@
 template: BlogPost
 path: /hello-datastore-bye-sharedpreferences-android
 date: 2020-09-03T03:50:44.332Z
-title: "Hello DataStore, Bye SharedPreferences\U0001F44B — Android\U0001F4F1"
+title: "Hello DataStore, Bye SharedPreferences\U0001F44B — Android\U0001F4F1 - Part 1: Preference DataStore"
 metaDescription: "In this article series, we’ll learn how to use the latest Android Jetpack \U0001F680 library i.e. DataStore in Android apps."
 metaKeywords: >-
   android, datastore, androidx, jetpack, preference, protobuf,
