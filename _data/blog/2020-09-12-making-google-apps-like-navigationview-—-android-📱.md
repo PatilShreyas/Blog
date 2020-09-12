@@ -1,7 +1,7 @@
 ---
 template: BlogPost
 path: /making-google-apps-like-navigation-drawer-material-design
-date: 2020-09-12T16:40:11.075Z
+date: 2019-09-10T16:40:11.075Z
 title: "Making Google-Apps Like NavigationView — Android \U0001F4F1"
 metaDescription: "Hello Developers, You might use Google’s Apps like Gmail, Google Photos, Google Drive, Keep Notes, etc. You have seen their Navigation drawer and it seems much attractive \U0001F60D and best Material Design implementation there. After this, you wished to implement it. Right? You might search on Google “How to implement Gmail like navigation drawer?” or “How to implement Google apps like Navigation Drawer” But you found nothing helpful \U0001F627. Then Here it is… \U0001F603 In this article, I’ll explain to you how to achieve it."
 metaKeywords: >-
