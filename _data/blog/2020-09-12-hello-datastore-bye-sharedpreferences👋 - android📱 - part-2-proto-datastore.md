@@ -31,7 +31,7 @@ You can simply [clone or refer this repository](https://github.com/PatilShreyas/
 
 What we’ll be implementing? So we’ll be developing a *Food* app 😋 where a list of food items will be displayed and we’ll provide a filter to the user for food preference options. Like Food type as 🟢***VEG*** or 🔴***NON-VEG***and Food taste as ***SWEET*** or ***SPICY***😋. So that user can filter his favourite food according to his choice. You can see a demo here. This is how it’ll be look alike👇.
 
-![An example application using Proto DataStore](/assets/ezgif.com-gif-maker (2).gif "An example application using Proto DataStore")
+![An example application using Proto DataStore](/assets/proto-datastore-app-demo.gif "An example application using Proto DataStore")
 
 Ok great! You might have got the idea of this app. First of all, we’ll need to add some dependencies for proto DataStore 👇
 
@@ -305,17 +305,17 @@ Now the implementation of `filterFoodList()`should look like follows 👇
     }
 ```
 
----
+- - -
 
 Yeah! That’s it 😍. We have implemented Proto DataStore now. If you run the app, you’ll see the output as you have seen at the starting of this article 🚀.
 
----
+- - -
 
 So that was about Proto DataStore. I hope you enjoyed this article or liked it! 😃.
 
 Thank you! 😃
 
----
+- - -
 
 ### Resources
 
