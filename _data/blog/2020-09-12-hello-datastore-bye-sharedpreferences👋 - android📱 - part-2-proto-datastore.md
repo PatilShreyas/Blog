@@ -11,6 +11,8 @@ thumbnail: /assets/datastore-proto.png
 ---
 # Hello DataStore, Bye SharedPreferences👋 — Android📱 — Part 2: Proto DataStore
 
+#### In this article series, we’ll learn how to use the Proto DataStore for storing type based objects. DataStore is the latest Android Jetpack 🚀 library which will replace SharedPreferences.
+
 Welcome Android Developers 👋. In [the previous article](https://blog.shreyaspatil.dev/hello-datastore-bye-sharedpreferences-android), we saw how to use Preference DataStore to store key-value pairs. But it is not type-safe, Right? We’ll be covering that part in this article 😃. If you missed the previous article then you can read it 👇
 
 [Hello DataStore, Bye SharedPreferences - Android - Part 1 - Preference DataStore](https://blog.shreyaspatil.dev/hello-datastore-bye-sharedpreferences-android)
@@ -239,7 +241,7 @@ That’s all about `FoodPreferenceManager` 😃. Now let’s implement it in our
 
 #### Set up Activity
 
-Here I’ll assume that you’re implementing this app with `RecyclerView` in `Activity` and you’ve implemented `ViewModel` for getting data i.e. list of food items from *Repository. (For demo purposes, here I’ve created a sample DataSource which gives a dummy list of food items).*So I’ll directly show you implementation related to *DataStore*. You can refer to ***[this](https://github.com/PatilShreyas/DataStoreExample/blob/master/app/src/main/java/dev/shreyaspatil/datastore/example/proto/ProtoDatastoreActivity.kt)*** class for more information.
+Here I’ll assume that you’re implementing this app with `RecyclerView` in `Activity` and you’ve implemented `ViewModel` for getting data i.e. list of food items from *Repository. (For demo purposes, here I’ve created a sample DataSource which gives a dummy list of food items).* So I’ll directly show you implementation related to *DataStore*. You can refer to ***[this](https://github.com/PatilShreyas/DataStoreExample/blob/master/app/src/main/java/dev/shreyaspatil/datastore/example/proto/ProtoDatastoreActivity.kt)*** class for more information.
 
 So let’s make *Activity*
 
@@ -251,7 +253,11 @@ class ProtoDatastoreActivity : AppCompatActivity() {
     private val foodListAdapter by lazy { FoodListAdapter() }
 ```
 
+
+
 > **Note:** Here `foodListAdapter`is a `RecyclerView.Adapter`’s implementation
+
+
 
 Now, whenever Chips are clicked by the user then preferences should be stored or updated in DataStore. So let’s do that 👇
 
