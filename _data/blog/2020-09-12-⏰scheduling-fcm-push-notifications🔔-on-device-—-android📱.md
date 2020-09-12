@@ -252,7 +252,7 @@ Hurrah! 😍 we have successfully implemented and scheduled FCM Push Notificatio
 
 ### \# What If Device is Rebooted?😕
 
-If a device is rebooted, Alarm will not work. For this, you’ll have to store all the information about FCM Notifications using **Room** database. After this, you’ll need to create a receiver (**ON_BOOT_COMPLETED**) which will be executed when Device is Rebooted. In that, all notifications in Room database should be scheduled again using AlarmManager.
+If a device is rebooted, Alarm will not work. For this, you’ll have to store all the information about FCM Notifications using **Room** database. After this, you’ll need to create a receiver (`ON_BOOT_COMPLETED`) which will be executed when Device is Rebooted. In that, all notifications in Room database should be scheduled again using AlarmManager.
 
 ## Let’s Test It 😃
 
@@ -273,7 +273,9 @@ I have sent below payload with to the FCM Channel (***discount-offers***).
 
 **🚀**See output below and notice that **Internet/Wi-Fi** is **OFF** still at exactly 02:12 pm I’m getting a notification on the system tray 😃.
 
-![At exact 02:12, Notification is displayed though Data is OFF.](https://cdn-images-1.medium.com/max/2000/1*RW1tvF4m6cARUgLu-O0WFw.gif)*At exact 02:12, Notification is displayed though Data is OFF.*
+![At exact 02:12, Notification is displayed though Data is OFF.](https://cdn-images-1.medium.com/max/2000/1*RW1tvF4m6cARUgLu-O0WFw.gif)
+
+*At exact 02:12, Notification is displayed though Data is OFF.*
 
 > **Yippie 😍! It’s working as expected. Hope you liked that. If you find it helpful please share this article. Maybe it’ll help someone needy!**
 >
