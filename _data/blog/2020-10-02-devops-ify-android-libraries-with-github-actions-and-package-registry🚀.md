@@ -2,7 +2,7 @@
 template: BlogPost
 path: /devops-ify-android-libraries-with-github-actions-and-github-package-registry
 date: 2020-10-02T10:30:00.000Z
-title: "DevOps-ify Android libraries with GitHub Actions and Package Registry\U0001F680"
+title: "DevOps-ify Android libraries with GitHub Actions and Package Registry \U0001F680"
 metaDescription: >-
   Hello Android developers, in this article we’ll take a look at publishing
   Android library to the GitHub Package Registry and automating it with GitHub
@@ -12,7 +12,7 @@ metaKeywords: >-
   package, devops, kotlin, java
 thumbnail: /assets/android-devops.png
 ---
-# DevOps-ify Android libraries with GitHub Actions and Package Registry🚀
+# DevOps-ify Android libraries with GitHub Actions and Package Registry 🚀
 
 Hello Android developers, in this article we’ll take a look at publishing Android library to the *[GitHub Package Registry](https://github.com/features/packages)* and automating it with *[GitHub Actions CI](https://github.com/features/actions).* You might have developed a cool Android library and wanted to publish it somewhere. In some situations, the GitHub Package Registry is really a good choice. Let’s discuss more on it.
 
