@@ -44,7 +44,7 @@ Considering you already have developed your library we’ll directly start with 
 * Open `build.gradle` file of your library module.
 * Apply *maven-publish* plugin at the top of the file.
 
-```gradle
+```groovy
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -53,7 +53,7 @@ apply plugin: 'maven-publish'
 
 * Declare Android library details such as *group, artifact, version, name, etc* as below 👇
 
-```gradle
+```groovy
 ext {
     mGroupId = "com.example"
     mArtifactId = "simple-library"
@@ -67,7 +67,7 @@ ext {
 
 * Create a task for generating Android source (`.jar`)
 
-```gradle
+```groovy
 task androidSourcesJar(type: Jar) {
     archiveClassifier.set('sources')
     from android.sourceSets.main.java.srcDirs
@@ -76,7 +76,7 @@ task androidSourcesJar(type: Jar) {
 
 * Configure maven publication options as below 👇. This will be responsible for a group and an artifact ID of your Android library.
 
-```gradle
+```groovy
 afterEvaluate {
     publishing {
         publications {
@@ -102,7 +102,7 @@ afterEvaluate {
 
 * In repositories, add details of your package. In this configuration, keep the name as `“GitHubPackages”` and URL should be in the format `“https://maven.pkg.github.com/USER/REPO”`. Here we’ll get credentials from environment variables. Here password will be a *[GitHub’s PERSONAL ACCESS TOKEN](https://github.com/settings/tokens)* which should have a permission `write:package`.
 
-```gradle
+```groovy
         repositories {
             maven {
                 name = "GitHubPackages"
@@ -119,7 +119,7 @@ afterEvaluate {
 
 > Thus whenever `gradlew publish` is executed then assembling will be performed first.
 
-```gradle
+```groovy
 publish.dependsOn assemble
 ```
 
@@ -285,7 +285,7 @@ Open Android app project from which the library will be used and perform the fol
 
 In the credentials, keep your GitHub’s username as ***username*** and put the token which we created in the previous step as a ***password***.
 
-```gradle
+```groovy
 repositories {
     maven {
         name = "GitHubPackages"
@@ -300,7 +300,7 @@ repositories {
 
 * Finally, add a dependency of the Android library.
 
-```gradle
+```groovy
 dependencies {
     // Simple library
     implementation 'com.example:simple-library:0.2.0'
