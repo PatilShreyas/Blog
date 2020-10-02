@@ -185,9 +185,9 @@ jobs:
           GPR_KEY: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-> *If you remember, we were reading username and password from System Environment variables in `build.gradle` configuration of the library. We’ll need to expose it from here.*
+> *If you remember, we were reading username and password from System Environment variables in `build.gradle` configuration of the library. We’ll need to expose them from here.*
 
-* Now once the package is published to GPR we’re ready to create a GitHub release. *(Here we have kept `draft` as `true` so that we can release it later)*.
+* Now once the package is published to GPR we’re ready to create a GitHub release. *(Here we are keeping `draft` as `true` so that we can release it later)*.
 
 ```yaml
       - name: Create Release ✅
@@ -202,7 +202,7 @@ jobs:
           prerelease: false
 ```
 
-* Once the GitHub release is created we’ll upload library artifact to the release.
+* Once the GitHub release is created it will upload library artifact to the release.
 
 ```yaml
       - name: Upload Simple Library AAR 🗳
