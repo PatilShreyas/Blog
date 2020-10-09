@@ -39,7 +39,7 @@ As you know, we won’t need to visit Play Console to deploy our app. So we will
 
 * Then the credentials file will be downloaded to your machine. *Keep that file safe.*
 * Come back to the Play Console → Click **‘DONE’** on dialog. You’ll see service account which you just created.
-* Click**“GRANT ACCESS’ →**Select application which you want to allow to publish → Make sure you’ve checked ‘Releases’ section.
+* Click **'GRANT ACCESS'** → Select application which you want to allow to publish → Make sure you’ve checked ‘Releases’ section.
 
 ![](/assets/AndroidDeploy4.png)
 
@@ -91,7 +91,7 @@ platform :android do
 end
 ```
 
-> **\*Note:** You can use many other [available parameters for configuring](https://docs.fastlane.tools/actions/upload_to_play_store/#parameters) `upload_to_play_store()` as per your requirement.*
+> _**Note:** You can use many other [available parameters for configuring](https://docs.fastlane.tools/actions/upload_to_play_store/#parameters) `upload_to_play_store()` as per your requirement._
 
 If you remove all parameters from `upload_to_play_store`then it’ll release application in production. So deploy lane would look like 👇
 
