@@ -109,7 +109,7 @@ Yeah! Thus we have completed the core part of the deployment. Now let’s test i
 
 ## Testing it locally 👨‍💻
 
-> **\*Note:**Before actually testing deployment make sure the initial version of the application should be already available on Play Console because Fastlane can’t create a new application. So you’ll have to create a very first version of the app from Play console itself.*
+> _**Note:**Before actually testing deployment make sure the initial version of the application should be already available on Play Console because Fastlane can’t create a new application. So you’ll have to create a very first version of the app from Play console itself._
 
 Run command as per syntax — `fastlane <LANE_NAME>`
 
