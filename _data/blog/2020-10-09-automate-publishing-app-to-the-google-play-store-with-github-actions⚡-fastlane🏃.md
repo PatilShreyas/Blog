@@ -9,7 +9,7 @@ metaKeywords: >-
   android, androiddev, deploy, auto deploy android, google play store, google
   play, fastlane, github actions, ci, cd, beta test, production, android app,
   aab
-thumbnail: /assets/0_MUVaxHrDXE8219wu.jpg
+thumbnail: /assets/AndroidFastlaneCICD.png
 ---
 # Automate publishing app to the Google Play Store with GitHub Actions⚡+ Fastlane🏃
 
