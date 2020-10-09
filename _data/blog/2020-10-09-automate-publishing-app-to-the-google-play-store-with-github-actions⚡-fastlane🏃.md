@@ -91,7 +91,7 @@ platform :android do
 end
 ```
 
-> _**Note:** You can use many other [available parameters for configuring](https://docs.fastlane.tools/actions/upload_to_play_store/#parameters) `upload_to_play_store()` as per your requirement._
+> _**Note:** You can use many other available parameters for configuring `upload_to_play_store()` as per your requirement._ Ref: https://docs.fastlane.tools/actions/upload_to_play_store/
 
 If you remove all parameters from `upload_to_play_store`then it’ll release application in production. So deploy lane would look like 👇
 
