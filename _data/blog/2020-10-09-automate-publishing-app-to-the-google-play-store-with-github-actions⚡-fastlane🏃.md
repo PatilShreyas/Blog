@@ -24,8 +24,8 @@ As you know, we won’t need to visit Play Console to deploy our app. So we will
 
 ## Generating Google Play Credentials (.json) 🔒
 
-* Open the[Google Play Console](https://play.google.com/apps/publish/)
-* Go to **Settings → API Access →**Click**‘Create new service account’** and follow steps mentioned in a dialog.
+* Open the [Google Play Console](https://play.google.com/apps/publish/)
+* Go to **Settings → API Access → **Click** ‘Create new service account’** and follow steps mentioned in a dialog.
 * In GCP console, Click **‘➕CREATE SERVICE ACCOUNT’**
 * Provide service account name → Click**‘Create’**
 * Then select role**‘Service Account User’**(As below image) and click **‘Continue’**.
